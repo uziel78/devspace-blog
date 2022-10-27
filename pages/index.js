@@ -8,7 +8,7 @@ import { sortByDate } from '@/utils/index';
 
 export default function HomePage({ posts }) {
   //console log client-side
-  console.log(posts);
+  //console.log(posts);
   return (
     <Layout>
       <h1 className='text-5xl border-b-4 p-5 font-bold'>Latests Posts</h1>
