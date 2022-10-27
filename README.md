@@ -17,7 +17,8 @@ This project is part two of a course found on Udemy (https://www.udemy.com/cours
 
 - sorting by date
 - category labeling (specific colors added for specific categories of content)
-- pagination
+- pagination (previous, next and number of pages)
+-
 
 ## Getting Started
 

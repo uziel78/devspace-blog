@@ -2,9 +2,9 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import Link from 'next/link';
-import Layout from '../components/Layout';
-import Post from '../components/Post';
-import { sortByDate } from '../utils';
+import Layout from '@/components/Layout';
+import Post from '@/components/Post';
+import { sortByDate } from '@/utils/index';
 
 export default function HomePage({ posts }) {
   //console log client-side
@@ -27,7 +27,7 @@ export default function HomePage({ posts }) {
   );
 }
 
-// accesses markdown files in posts folder, creates a slug and creates an array of objects to render
+// *accesses markdown files in posts folder, creates a slug and creates an array of objects to render
 
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join('posts'));
@@ -40,7 +40,7 @@ export async function getStaticProps() {
       'utf-8'
     );
     //console.log(markdownWithMeta);
-    //use grey-matter to parse file content into objects (data object also renamed to frontmatter)
+    // *use grey-matter to parse file content into objects (data object also renamed to frontmatter)
     const { data: frontmatter } = matter(markdownWithMeta);
 
     return {
@@ -51,7 +51,7 @@ export async function getStaticProps() {
 
   //console.log(posts);
 
-  //uses function in utils to help sort by date, then only render six in total
+  // *uses function in utils to help sort by date, then only render six in total
   return {
     props: {
       posts: posts.sort(sortByDate).slice(0, 6),
