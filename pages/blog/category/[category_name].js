@@ -1,9 +1,9 @@
 import fs from 'fs';
-import matter from 'gray-matter';
 import path from 'path';
+import matter from 'gray-matter';
 import Layout from '@/components/Layout';
 import Post from '@/components/Post';
-import { sortByDate } from '@/utils/index';
+import { getPosts } from '@/lib/posts';
 
 export default function CategoryBlogPage({ posts, categoryName }) {
   //console log client-side
@@ -57,22 +57,7 @@ export async function getStaticProps({ params: { category_name } }) {
   //console.log(category_name);
   const files = fs.readdirSync(path.join('posts'));
 
-  const posts = files.map((filename) => {
-    const slug = filename.replace('.md', '');
-
-    const markdownWithMeta = fs.readFileSync(
-      path.join('posts', filename),
-      'utf-8'
-    );
-    //console.log(markdownWithMeta);
-    // *use grey-matter to parse file content into objects (data object also renamed to frontmatter)
-    const { data: frontmatter } = matter(markdownWithMeta);
-
-    return {
-      slug,
-      frontmatter,
-    };
-  });
+  const posts = getPosts();
 
   //console.log(posts);
 
@@ -85,7 +70,7 @@ export async function getStaticProps({ params: { category_name } }) {
   // *uses function in utils to help sort by date, then only render six in total
   return {
     props: {
-      posts: categoryPosts.sort(sortByDate),
+      posts: categoryPosts,
       categoryName: category_name,
     },
   };
