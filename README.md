@@ -12,6 +12,7 @@ This project is part two of a course found on Udemy (https://www.udemy.com/cours
 - grey-matter (parses a string with front-matter into an object)
 - markdown files/syntax
 - marked (package used to parse the markdown content)
+- icon use with react-icons
 
 **The project also handles:**
 

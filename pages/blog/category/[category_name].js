@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import Layout from '@/components/Layout';
 import CategoryList from '@/components/CategoryList';
 import Post from '@/components/Post';
-
 import { getPosts } from '@/lib/posts';
 
 export default function CategoryBlogPage({ posts, categoryName, categories }) {
