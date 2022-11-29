@@ -36,7 +36,6 @@ export default function Post({ post, compact }) {
             <a className='text-gray-800 hover:text-blue-600'>Read More</a>
           </Link>
           <div className='flex items-center'>
-            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={post.frontmatter.author_image}
               alt=''
