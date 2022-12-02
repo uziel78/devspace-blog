@@ -13,6 +13,7 @@ This project is part two of a course found on Udemy (https://www.udemy.com/cours
 - markdown files/syntax
 - marked (package used to parse the markdown content)
 - icon use with react-icons
+- husky (used to run script to automatically add post files to cache on every commit)
 
 **The project also handles:**
 
@@ -20,7 +21,6 @@ This project is part two of a course found on Udemy (https://www.udemy.com/cours
 - category filtering and labeling (specific colors added for specific categories of content)
 - pagination (previous, next and number of pages)
 - separate category list
--
 
 ## Getting Started
 
